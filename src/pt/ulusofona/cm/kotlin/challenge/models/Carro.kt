@@ -8,7 +8,13 @@ class Carro (identificador: String, motor: Motor): Veiculo(identificador){
 
     lateinit var motor : Motor
 
+    override fun moverPara(x: Int, y: Int) {
+        posicao.alterarPosicaoPara(x,y)
+    }
+
     override fun toString(): String {
         return "Carro | $identificador | $motor"
     }
+
+
 }
