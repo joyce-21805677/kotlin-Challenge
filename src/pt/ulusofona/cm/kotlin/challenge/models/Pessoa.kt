@@ -17,7 +17,6 @@ class Pessoa(var nome: String, var dataDeNascimento: Date) {
 
     fun pesquisarVeiculo(identificador: String): Veiculo {
 
-
         for (veiculo in veiculos) {
             if (identificador == veiculo.identificador) {
                 return veiculo
