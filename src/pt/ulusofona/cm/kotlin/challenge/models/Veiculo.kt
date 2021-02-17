@@ -6,7 +6,7 @@ import java.util.*
 abstract class Veiculo (identificador: String): Movimentavel {
 
     open var identificador = ""
-    lateinit var dataDeAquisicao: Date
+    var dataDeAquisicao: Date = Date()
     var posicao : Posicao = Posicao(0,0)
 
     abstract fun requerCarta(): Boolean
