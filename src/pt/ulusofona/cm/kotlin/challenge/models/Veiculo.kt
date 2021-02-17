@@ -7,7 +7,7 @@ abstract class Veiculo (identificador: String): Movimentavel {
 
     open var identificador = ""
     lateinit var dataDeAquisicao: Date
-    lateinit var posicao : Posicao
+    var posicao : Posicao = Posicao(0,0)
 
     abstract fun requerCarta(): Boolean
 
