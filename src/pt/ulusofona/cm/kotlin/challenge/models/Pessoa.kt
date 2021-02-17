@@ -6,9 +6,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Pessoa(var nome: String, var dataDeNascimento: Date) {
+
     lateinit var veiculos: ArrayList<Veiculo>
     lateinit var carta: Carta
-    lateinit var posicao: Posicao
+    var posicao: Posicao = Posicao(0,0)
 
     fun comprarVeiculo(veiculo: Veiculo) {
 
