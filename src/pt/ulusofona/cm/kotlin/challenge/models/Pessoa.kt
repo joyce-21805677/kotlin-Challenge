@@ -33,7 +33,7 @@ class Pessoa(var nome: String, var dataDeNascimento: Date) {
         comprador.comprarVeiculo(veiculo)
     }
 
-    fun moverVeiculo(identificador: String, x: Int, y: Int) {
+    fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         var veiculo = pesquisarVeiculo(identificador)
 
         if (veiculo.requerCarta() && !temCarta()){
