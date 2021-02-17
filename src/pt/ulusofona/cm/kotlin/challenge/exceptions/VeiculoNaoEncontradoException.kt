@@ -1,4 +1,4 @@
-package pt.ulusofuna.cm.kotlin.challenge.exceptions
+package pt.ulusofona.cm.kotlin.challenge.exceptions
 
 import java.lang.Exception
 

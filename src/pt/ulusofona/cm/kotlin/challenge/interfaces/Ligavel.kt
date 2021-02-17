@@ -1,4 +1,4 @@
-package pt.ulusofuna.cm.kotlin.challenge.interfaces
+package pt.ulusofona.cm.kotlin.challenge.interfaces
 
 interface Ligavel {
     fun ligar()

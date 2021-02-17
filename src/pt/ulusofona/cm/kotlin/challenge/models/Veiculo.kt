@@ -1,6 +1,6 @@
-package pt.ulusofuna.cm.kotlin.challenge.models
+package pt.ulusofona.cm.kotlin.challenge.models
 
-import pt.ulusofuna.cm.kotlin.challenge.interfaces.Movimentavel
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
 abstract class Veiculo (identificador: String): Movimentavel {

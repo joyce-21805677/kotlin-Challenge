@@ -1,4 +1,4 @@
-package pt.ulusofuna.cm.kotlin.challenge.models
+package pt.ulusofona.cm.kotlin.challenge.models
 
 class Carro (identificador: String, motor: Motor): Veiculo(identificador){
 
