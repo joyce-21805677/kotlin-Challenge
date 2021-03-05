@@ -74,7 +74,7 @@ data class Pessoa(var nome: String, var dataDeNascimento: Date): Movimentavel {
 
     override fun toString(): String {
 
-        return "Pessoa | $nome | $veiculos | ${DateFormatting.getAge(dataDeNascimento)} | $carta | ${posicao.x} | ${posicao.y}"
+        return "Pessoa | $nome | $veiculos | ${DateFormatting.getAge(dataDeNascimento)} | ${posicao.x} | ${posicao.y}"
     }
 
 }
