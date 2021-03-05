@@ -51,7 +51,7 @@ class Carro (identificador: String, private var motor: Motor): Veiculo(identific
     }
 
     override fun toString(): String {
-        return "Carro | $identificador | $motor"
+        return "Carro | $identificador | ${DateFormatting.getDate(dataDeAquisicao)} | $posicao"
     }
 
 
