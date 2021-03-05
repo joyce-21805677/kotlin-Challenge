@@ -1,6 +1,11 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-class Carro (identificador: String, motor: Motor): Veiculo(identificador){
+import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
+
+class Carro (identificador: String, motor: Motor): Veiculo(identificador), Movimentavel, Ligavel{
 
     override fun requerCarta(): Boolean {
         return true
@@ -9,7 +14,42 @@ class Carro (identificador: String, motor: Motor): Veiculo(identificador){
     lateinit var motor : Motor
 
     override fun moverPara(x: Int, y: Int) {
-        posicao.alterarPosicaoPara(x,y)
+        if (posicao.x == x && posicao.y == y){
+            throw AlterarPosicaoException("Movimento para a posição onde já te encontras.")
+        }
+        if (!motor.estaLigado()){
+
+            motor.ligar()
+            posicao.alterarPosicaoPara(x,y)
+
+        }else{
+
+            posicao.alterarPosicaoPara(x,y)
+
+        }
+
+    }
+
+    override fun ligar() {
+
+        if (motor.estaLigado()){
+            throw VeiculoLigadoException("Tentou ligar um veículo e o mesmo já se encontra ligado.")
+        }
+
+        motor.ligar()
+    }
+
+    override fun desligar() {
+
+        if (!motor.estaLigado()){
+            throw VeiculoLigadoException("Tentou desligar um veículo e o mesmo já se encontra desligado.")
+        }
+
+        motor.desligar()
+    }
+
+    override fun estaLigado(): Boolean {
+        return motor.estaLigado()
     }
 
     override fun toString(): String {
