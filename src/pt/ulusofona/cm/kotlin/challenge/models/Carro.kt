@@ -20,10 +20,12 @@ class Carro (identificador: String, private var motor: Motor): Veiculo(identific
 
             motor.ligar()
             posicao.alterarPosicaoPara(x,y)
+            motor.desligar()
 
         }else{
 
             posicao.alterarPosicaoPara(x,y)
+            motor.desligar()
 
         }
 
