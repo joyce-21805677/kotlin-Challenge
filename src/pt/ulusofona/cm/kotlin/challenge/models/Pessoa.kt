@@ -2,10 +2,12 @@ package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Pessoa(var nome: String, var dataDeNascimento: Date) {
+class Pessoa(var nome: String, var dataDeNascimento: LocalDate) {
 
     lateinit var veiculos: ArrayList<Veiculo>
     lateinit var carta: Carta
@@ -30,7 +32,7 @@ class Pessoa(var nome: String, var dataDeNascimento: Date) {
         var veiculo = pesquisarVeiculo(identificador)
         veiculos.remove(veiculo)
 
-        veiculo.dataDeAquisicao = Date()
+        veiculo.dataDeAquisicao = LocalDate.now()
         comprador.comprarVeiculo(veiculo)
     }
 
@@ -56,7 +58,7 @@ class Pessoa(var nome: String, var dataDeNascimento: Date) {
     override fun toString(): String {
         //TODO(Formatação de data) var formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy")
         // var formattedDate = date.format(formatter)
-        return "Pessoa | $nome | $veiculos | $dataDeNascimento | $carta | ${posicao.x} | ${posicao.y}"
+        return "Pessoa | $nome | $veiculos | ${dataDeNascimento.format(DateTimeFormatter.ofPattern("DD-MM-YYY"))} | $carta | ${posicao.x} | ${posicao.y}"
     }
 
 }
