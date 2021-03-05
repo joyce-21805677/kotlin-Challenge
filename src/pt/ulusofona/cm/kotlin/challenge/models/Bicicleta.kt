@@ -1,8 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-import java.time.format.DateTimeFormatter
-import java.util.*
-
 class Bicicleta(identificador: String): Veiculo(identificador) {
 
 
@@ -16,6 +13,6 @@ class Bicicleta(identificador: String): Veiculo(identificador) {
 
     override fun toString(): String {
 
-        return "Bicicleta | $identificador | ${dataDeAquisicao.format(DateTimeFormatter.ofPattern("DD-MM-YYY"))} | Posicao | x:${posicao.x} | y:${posicao.y}"
+        return "Bicicleta | $identificador | ${DateFormatting.getDate(dataDeAquisicao)}} | Posicao | x:${posicao.x} | y:${posicao.y}"
     }
 }
