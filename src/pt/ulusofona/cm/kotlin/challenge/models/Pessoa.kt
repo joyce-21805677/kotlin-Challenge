@@ -44,7 +44,7 @@ data class Pessoa(var nome: String, var dataDeNascimento: Date): Movimentavel {
         var veiculo = pesquisarVeiculo(identificador)
 
         if (veiculo.requerCarta() && !temCarta()){
-            throw PessoaSemCartaException("Uma pessoa sem carta tentou conduzir um veículo que necessita de carta.")
+            throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
         }else {
             veiculo.moverPara(x, y)
         }
