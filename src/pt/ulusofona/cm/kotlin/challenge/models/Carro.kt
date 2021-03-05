@@ -5,13 +5,11 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Carro (identificador: String, motor: Motor): Veiculo(identificador), Movimentavel, Ligavel{
+class Carro (identificador: String, private var motor: Motor): Veiculo(identificador), Movimentavel, Ligavel{
 
     override fun requerCarta(): Boolean {
         return true
     }
-
-    lateinit var motor : Motor
 
     override fun moverPara(x: Int, y: Int) {
         if (posicao.x == x && posicao.y == y){
